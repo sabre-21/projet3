@@ -1,0 +1,984 @@
+body {
+    Font-family: "Roboto", "sans-serif";
+    margin: 0;
+}
+
+.title {
+    font-family: "Shrikhand", "sans-serif";
+}
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$black: #000;
+$white: #fff;
+
+.spinner {
+
+    width: auto;
+    height: auto;
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3; 
+    // permet d'avoir le loader par dessus tout les éléments 
+    background-color: rgba($color: $white, $alpha: 0.999); // Fond blanc légerement transparent du spinner
+    position: fixed;
+    // loader reste affiché en scroll
+    height: 100vh;
+    inset: 0;
+    opacity: 0.95;
+    animation: loaded 3s; // Durée avant disparition du loader
+    animation-fill-mode: forwards;
+}
+
+.spinner .circle {
+    animation: spinners linear infinite;
+    position: absolute;
+    border: 5px solid transparent;
+    border-radius: 50%
+}
+
+.spinner .one {
+    width: 50px;
+    height: 50px;
+    border-top-color: $color-secondary;
+    animation-duration: .85s
+}
+
+.spinner .two {
+    width: 70px;
+    height: 70px;
+    border-top-color: #963a7c;
+    animation-duration: .95s
+}
+
+.spinner .three {
+    width: 100px;
+    height: 100px;
+    border-top-color: $color-primary;
+    animation-duration: 1.05s
+}
+
+
+@keyframes spinners {
+    0% {
+        transform: rotate(0deg)
+    }
+    
+    100% {
+        transform: rotate(360deg)
+    }
+}
+@keyframes loaded {
+
+    // Fait disparaitre le loader à la fin de l'animation 
+    to {
+        visibility: hidden;
+    }
+}
+
+header {
+    .logo_header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        max-height: 150px;
+        .hidden {
+            color: $white;
+        }
+        img {
+            width: 50%;
+            padding: 5% 0%;
+            max-width: 300px;
+        }
+    } 
+    .location {
+        background-color: #eaeaea;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 5px 3px 0 #cecece;
+        cursor: pointer;
+        p {
+            margin-left: 15px;
+        }
+    }    
+}
+
+.slogan {
+        background-color: #f6f6f6;
+        text-align: center;
+        padding-bottom: 50px;
+    h1 {
+        margin: 0;
+        padding: 40px 15% 0;
+        font-size: 25px;
+        font-weight: 800
+    }
+    p {
+        padding: 0 6% 10px;
+        font-size: 18px;
+        font-weight: 300;
+    } 
+}
+
+.btn {
+    height: 50px;
+    padding: 10px 30px;
+    background: linear-gradient(175deg, $color-secondary, $color-primary);
+    border-radius: 30px;
+    border: none;
+    color: $white;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.fonctionnement {
+    padding: 50px 20px;
+    &_step {
+        display: flex;
+        height: 75px;
+        background-color: #f6f6f6;
+        margin: 20px;
+        border-radius: 25px;
+        box-shadow: 0 5px 10px #cecece;
+        cursor: pointer;
+        &:hover {
+            background-color: #f5edff;
+
+            .fonctionnement_step_icons_icon {
+                color: $color-primary; 
+            }
+        }
+
+        &_icons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: -15px;
+            margin-right: 15px;
+            width: 20%;
+
+            &_number {
+                background-color: $color-primary;
+                color: $white;
+                width: 20px;
+                padding: 5px;
+                border-radius: 30px;
+                text-align: center;
+            }
+
+            &_icon {
+                font-size: 20px;
+                color: #7e7e7e;
+            }
+        }
+
+        &_txt {
+            width: 80%;
+            line-height: 75px;
+            font-weight: 700;
+        }
+
+    }
+
+}    
+
+    .restaurants {
+        background-color: #f6f6f6;
+        padding: 50px 0 50px 30px ;
+
+        h2 {
+            width: 80%;
+        }
+
+        &_content {
+           
+            .card {
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+                margin-bottom: 30px;
+                height: 250px;
+                width: 90%;
+                background-color: $white;
+                box-shadow: 0 5px 10px #eaeaea;
+                border-radius: 15px;
+                cursor: pointer;
+
+                .image {
+                    height: 175px;
+                    position: relative;
+                    overflow: hidden;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                    z-index: 2;
+
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                        overflow: hidden;
+                        display: block;
+                    }
+
+                    
+                }
+                
+                .body{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 0;
+                    padding: 0 15px;
+                    position: relative;
+
+                    .favs {
+                        position: relative;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: rgb(0, 0, 0);
+                        cursor: pointer;
+                        -moz-transition: all 0.3s ease;
+                        transition: all 0.3s ease;
+                    
+                        &:hover {
+                            .fav_on {
+                                opacity: 1;
+                            }
+                    
+                            .fav_off {
+                                opacity: 0;
+                            }
+                        }
+                    }
+
+                    
+                
+        
+                h3 {
+                    font-weight: 800;
+                    margin-top: 10px;
+                    margin-bottom: 0;
+                }
+        
+                p {
+                    margin-top: 5px;
+                }
+                }
+
+                transition: all 1s ease;
+
+                &:hover {
+                    box-shadow: 0 5px 10px #ac92cc;
+                }
+
+                }
+
+            }
+
+            .sticker {
+                font-size: 15px;
+                font-weight: 600;
+                position: absolute;
+                color: #008766;
+                background-color: $color-tertiary;
+                z-index: 2;
+                top: 15px;
+                right: 10px;
+                padding: 5px 10px;
+            }
+            
+            
+        }
+
+
+footer {
+    height: 150px;
+    background-color: #353535;
+    color: $white;
+    padding: 25px;
+}
+
+.foot {
+
+    &_logo {
+        width: 100px;
+        filter: invert(100%);
+    }
+
+    &_list {
+        padding: 0;
+        list-style: none;
+        font-size: 15px;
+
+        li {
+            padding: 5px 0;
+
+            a {
+                text-decoration: none;
+                color: $white;
+            }
+        }
+
+        i {
+            width: 25px;
+            font-size: 13px;
+        }
+    }
+}
+
+
+
+.fav {
+    font-size: 25px; 
+    margin: 0 25px 20px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $black;
+        display: block;
+    }
+
+    .fav_off {
+        transition: opacity 0.5s, transform 1s;
+    }
+
+    .fav_on {
+        background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: opacity 0.5s, transform 1s;
+        opacity: 0;
+    }
+
+}
+
+
+//  Pages Restaurants
+
+.main_restaurant {
+    background-color: #f6f6f6;
+    
+
+}
+
+.header_restaurant {
+    .logo_header {
+        box-shadow: none;
+    }
+
+    &_img {
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    }
+}
+
+.back {   
+    font-size: 20px;
+    color: inherit;
+}
+
+.title {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px 0 20px;
+    margin-top: -40px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background-color: #f6f6f6;
+
+    &_txt {
+        
+        font-size: 30px;
+        font-weight: 100;
+        font-family: 'Shrikhand', cursive;
+        
+    }
+
+    .favs {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+
+        &:hover {
+            .fav_on {
+                opacity: 1;
+            }
+
+            .fav_off {
+                opacity: 0;
+            }
+        }
+
+        transition: all 1s ease;
+    }
+}
+
+.epd {
+    padding: 0 15px 0;
+    &_title {
+        margin-bottom: 5px;
+        font-size: 15px;  
+        text-transform: uppercase;
+        font-weight: 100;
+        &_underline {
+            height: 3px;
+            width: 40px;
+            background-color: $color-tertiary;
+        }
+    }
+    &_list {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer; 
+
+        &_item {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            margin-bottom: 12px;
+            box-shadow: 0 5px 10px #eaeaea;
+            border-radius: 15px;
+            max-width: 630px;
+            overflow: hidden;
+            opacity: 0;
+
+            &:nth-child(1) {
+                animation: fade-in 500ms forwards 300ms;
+            }
+
+            &:nth-child(2) {
+                animation: fade-in 500ms forwards 550ms;
+            }
+
+            &:nth-child(3) {
+                animation: fade-in 500ms forwards 800ms;
+            }
+
+            &:nth-child(4) {
+                animation: fade-in 500ms forwards 1050ms;
+            }
+            &:hover,
+            &:active {
+                .epd_list_item_txt {
+                    width: calc(80% - 60px);
+
+                    h3 {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
+                }
+
+                .epd_list_item_price {
+                    animation: slide-in-price 500ms forwards;
+                }
+
+                .epd_list_item_check {
+                    animation: slide-in-check 500ms forwards;
+                }
+
+                .fa-circle-check {
+                    transform: rotate(270deg);
+                }
+            }
+
+            &_txt { 
+                width: 80%;
+                padding: 5px;
+                h3, p {
+                    margin: 5px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                p {
+                    font-weight: 100;
+                }
+                h3 {
+                    font-weight: 500; 
+                }
+            }
+            &_price {
+                padding: 0 20px 10px 0;
+                font-weight: 600;
+                position: absolute;
+                right: 0;
+                animation: slide-out-price 300ms forwards;
+            }
+
+            &_check {
+                font-size: 25px;
+                position: absolute;
+                right: -60px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 60px;
+                height: 100%;
+                background-color: $color-tertiary;
+                color: $white;
+                animation: slide-out-check 300ms forwards;
+                writing-mode: vertical-rl;
+                text-orientation: sideways;
+            }
+        }
+    }
+}
+
+.fa-circle-check {
+    transition: transform 500ms 200ms;
+}
+
+@keyframes slide-in-check {
+    from {
+        right: -60px;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@keyframes slide-out-check {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: -60px;
+    }
+}
+
+@keyframes slide-in-price {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: 60px;
+    }
+}
+
+@keyframes slide-out-price {
+    from {
+        right: 60px;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+
+@keyframes fade-in {
+    from {
+        top: 10px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
+.btn_restaurant {
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 40px 0;
+}
+
+.btn_cmd {
+    padding: 10px 50px;
+}
+
+
+//  Responsive
+
+@media only screen and (min-width: 700px) and (max-width: 1000px) {
+    h2 {
+        font-size: 40px;
+    }
+
+    .header_restaurant_img {
+        height: 450px;
+    }
+
+    .title {
+        padding: 20px 5% 0 5%;
+
+        &_txt {
+            h1 {
+                font-size: 40px;
+            }
+        }
+    }
+
+    .location {
+        height: 80px;
+        font-size: 22px;
+    }
+
+    .slogan {
+        h1 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    .btn {
+        height: 80px;
+        font-size: 25px;
+        border-radius: 50px;
+    }
+
+    .fonctionnement {
+
+        h2 {
+            font-size: 30px;
+        }
+    
+        &_step {
+            height: 150px;
+            font-size: 25px;
+            margin: 40px;
+
+            &_icons {
+                margin-left: -25px;
+                margin-right: 50px;
+
+                &_number {
+                    width: 30px;
+                }
+
+                &_icon {
+                    font-size: 30px;
+                }
+            }
+
+            &_txt {
+                line-height: 150px;
+            }
+        }
+
+    }
+
+    .restaurants {
+        h2 {
+            font-size: 30px;
+            padding-bottom: 15px;
+        }
+        &_content {
+            padding-left: 5%;
+        }
+    }
+
+    .card {
+        height: 520px;
+        width: 60%;
+        
+
+        .image {
+            height: 400px;
+        }
+
+        .body {
+            margin-top: 5px;
+
+            h3 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .fav {
+        font-size: 30px;
+        margin: 0 40px 40px 0;
+    }
+
+    .epd {
+        &_title {
+            h2 {
+                font-size: 30px;
+            }
+
+            &_underline {
+                height: 4px;
+                width: 80px;
+            }
+        }
+
+        &_list {
+            &_item {
+                &_txt {
+                    h3 {
+                        font-size: 30px;
+                    }
+
+                    p {
+                        font-size: 20px;
+                    }
+                }
+
+                &_price {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    footer {
+
+        height: 200px;
+
+        .foot {
+            &_logo {
+                width: 150px;
+            }
+
+            &_list {
+                font-size: 20px;
+
+                i {
+                    width: 30px;
+                    font-size: 17px;
+                }
+            }
+        }   
+    }
+
+}
+
+@media only screen and (min-width: 1001px) {
+    h2 {
+        font-size: 40px;
+        margin: 0;
+    }
+
+    .header_restaurant_img {
+        height: 450px;
+    }
+
+    .title {
+        padding: 20px 5% 0 5%;
+
+        &_txt {
+            h1 {
+                font-size: 40px;
+            }
+        }
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo_header {
+        width: 100%;
+
+        img {
+            padding: 50px 0;
+        }
+    }
+
+    .location {
+        width: 100%;
+        height: 80px;
+        font-size: 22px;
+    }
+
+    .slogan {
+        h1 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    .btn {
+        height: 80px;
+        font-size: 25px;
+        border-radius: 50px;
+    }
+
+    .fonctionnement {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            font-size: 30px;
+        }
+
+        &_step {
+            width: 900px;
+            height: 150px;
+            font-size: 25px;
+            margin: 40px;
+
+            &_icons {
+                margin-left: -25px;
+                margin-right: 25px;
+
+                &_number {
+                    width: 30px;
+                }
+
+                &_icon {
+                    font-size: 30px;
+                }
+            }
+
+            &_txt {
+                line-height: 150px;
+            }
+        }
+    }
+
+    .restaurants {
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &_content {
+            max-width: 930px;
+        }
+
+        h2 {
+            width: auto;
+            margin: 50px;
+            font-size: 30px;
+        }
+    }
+
+    .card {
+        height: 550px;
+        width: 300px;
+        margin: 40px 30px;
+
+        .image {
+            height: 250px;
+        }
+
+        .body {
+            h3 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .fav {
+        font-size: 30px;
+        margin: 0 40px 40px 0;
+    }
+
+    .epd {
+        &_title {
+            h2 {
+                font-size: 30px;
+            }
+
+            &_underline {
+                height: 4px;
+                width: 80px;
+            }
+        }
+
+        &_list {
+            &_item {
+                &_txt {
+                    h3 {
+                        font-size: 30px;
+                    }
+
+                    p {
+                        font-size: 20px;
+                    }
+                }
+
+                &_price {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        padding: 35px 0 0 40px;
+        height: 200px;
+    }
+
+    .foot {
+        &_logo {
+            width: 150px;
+        }
+
+        &_list {
+            font-size: 20px;
+
+            i {
+                width: 30px;
+                font-size: 17px;
+            }
+        }
+    }
+
+}
