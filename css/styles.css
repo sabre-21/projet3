@@ -111,6 +111,14 @@ header .location {
 header .location p {
   margin-left: 15px;
 }
+header .input {
+  background-color: #eaeaea;
+  border: 0;
+  margin-left: 10px;
+  width: 200px;
+  height: 70px;
+  font-size: 25px;
+}
 
 .slogan {
   background-color: #f6f6f6;
@@ -680,13 +688,13 @@ footer {
     width: 80px;
   }
   .epd_list_item_txt h3 {
-    font-size: 30px;
+    font-size: 22px;
   }
   .epd_list_item_txt p {
-    font-size: 20px;
+    font-size: 18px;
   }
   .epd_list_item_price {
-    font-size: 25px;
+    font-size: 20px;
   }
   footer {
     height: 200px;
@@ -811,13 +819,13 @@ footer {
     width: 80px;
   }
   .epd_list_item_txt h3 {
-    font-size: 30px;
+    font-size: 22px;
   }
   .epd_list_item_txt p {
-    font-size: 20px;
+    font-size: 18px;
   }
   .epd_list_item_price {
-    font-size: 25px;
+    font-size: 20px;
   }
   footer {
     display: flex;

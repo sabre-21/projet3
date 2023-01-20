@@ -105,7 +105,17 @@ header {
         p {
             margin-left: 15px;
         }
-    }    
+    }  
+    .input {
+        background-color: #eaeaea;
+        border: 0;
+        margin-left: 10px;
+        width: 200px;
+        height: 70px;
+        font-size: 25px;
+
+    }
+
 }
 
 .slogan {
@@ -758,16 +768,16 @@ footer {
             &_item {
                 &_txt {
                     h3 {
-                        font-size: 30px;
+                        font-size: 22px;
                     }
 
                     p {
-                        font-size: 20px;
+                        font-size: 18px;
                     }
                 }
 
                 &_price {
-                    font-size: 25px;
+                    font-size: 20px;
                 }
             }
         }
@@ -944,16 +954,16 @@ footer {
             &_item {
                 &_txt {
                     h3 {
-                        font-size: 30px;
+                        font-size: 22px;
                     }
 
                     p {
-                        font-size: 20px;
+                        font-size: 18px;
                     }
                 }
 
                 &_price {
-                    font-size: 25px;
+                    font-size: 20px;
                 }
             }
         }
