@@ -111,14 +111,6 @@ header .location {
 header .location p {
   margin-left: 15px;
 }
-header .input {
-  background-color: #eaeaea;
-  border: 0;
-  margin-left: 10px;
-  width: 200px;
-  height: 70px;
-  font-size: 25px;
-}
 
 .slogan {
   background-color: #f6f6f6;
